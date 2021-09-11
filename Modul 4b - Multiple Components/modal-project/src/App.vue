@@ -1,10 +1,14 @@
 <template>
   <h1>{{ title }}</h1>
-  <Modal :header="header" :text="text" theme="sale" />
+  <p>Welcome...</p>
+  <div v-if="showModal">
+    <Modal :header="header" :text="text" theme="sale" @close="toggleModal" />
+  </div>
+  <button @click="toggleModal">open modal</button>
 </template>
 
 <script>
-import Modal from './components/Modal.vue'
+import Modal from "./components/Modal.vue";
 
 export default {
   name: "App",
@@ -14,7 +18,13 @@ export default {
       title: "My First Vue App :)",
       header: "Sign up for Giveaway!",
       text: "Grab your coupon for half price!",
-    };
+      showModal: false,
+    }
+  },
+  methods: {
+      toggleModal() {
+          this.showModal = !this.showModal
+      }
   },
 };
 </script>
