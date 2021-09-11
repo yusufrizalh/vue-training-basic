@@ -1,7 +1,7 @@
 <template>
   <h1>{{ title }}</h1>
   <p>Welcome...</p>
-  <div v-if="showModal">
+  <teleport to="#modals" v-if="showModal">
     <Modal theme="" @close="toggleModal">
       <h1>Coupon Giveaway!</h1>
       <p>Grab your coupon for half price!</p>
@@ -10,26 +10,20 @@
         <a href="#">more info</a>
       </template>
     </Modal>
-  </div>
+  </teleport>
 
-  <div v-if="showModalTwo">
+  <teleport to="#modals" v-if="showModalTwo">
     <Modal @close="toggleModalTwo">
       <h1>Sign up to the newsletter</h1>
       <p>For updates and promo codes!</p>
     </Modal>
-  </div>
+  </teleport>
 
   <button @click.alt="toggleModal">open modal (alt)</button>
   <button @click="toggleModalTwo">open modal</button>
 </template>
 
 <script>
-/* 
-Challenge:
-    - create an extra button to open different modal
-    - use the same modal component but pass in a different template (slot)
-    - use a different method (e.g. toggleModalTwo) and data (e.g. showModalTwo)
-*/
 
 import Modal from "./components/Modal.vue";
 
@@ -55,7 +49,7 @@ export default {
 </script>
 
 <style>
-#app {
+#app, #modals {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
