@@ -1,4 +1,4 @@
-# web-form
+# web-forms
 
 ## Project setup
 ```

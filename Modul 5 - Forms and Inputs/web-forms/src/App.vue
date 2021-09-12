@@ -4,7 +4,7 @@
 
 <script>
 
-import SignupForm from './components/SignupForm-modul5-forms.vue'
+import SignupForm from './components/SignupForm-modul5-submittingforms.vue'
 
 export default {
   name: "App",

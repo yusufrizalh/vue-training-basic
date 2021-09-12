@@ -8,24 +8,17 @@
     <select v-model="role">
       <option value="developer">Web Developer</option>
       <option value="designer">Web Designer</option>
-      <option value="tester">Tester</option>
-      <option value="dbadmin">Database Admin</option>
     </select>
+
+    <label>Skills:</label>
+    <input type="text" v-model="tempSkill" @keyup.alt="addSkill">
+    <div v-for="skill in skills" :key="skill" class="pill">
+        {{ skill }}
+    </div>
+
     <div class="terms">
-      <input type="checkbox" required v-model="terms">
+      <input type="checkbox" required v-model="terms" />
       <label>Accept terms and conditions</label>
-    </div>
-    <div>
-      <input type="checkbox" value="inixindo" v-model="names">
-      <label>Inixindo</label>
-    </div>
-    <div>
-      <input type="checkbox" value="yusuf" v-model="names">
-      <label>Yusuf</label>
-    </div>
-    <div>
-      <input type="checkbox" value="rizal" v-model="names">
-      <label>Rizal</label>
     </div>
   </form>
 
@@ -33,21 +26,31 @@
   <p>Password: {{ password }}</p>
   <p>Role: {{ role }}</p>
   <p>Terms accepted: {{ terms }}</p>
-  <p>Names: {{ names }}</p>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      email: 'yusuf@email.com',
-      password: '',
-      role: 'designer',
+      email: "yusuf@email.com",
+      password: "",
+      role: "designer",
       terms: false,
-      names: []
+      tempSkill: '',
+      skills: []
     }
+  },
+  methods: {
+      addSkill(event) {
+          if (event.key === ',' && this.tempSkill) {
+              if (!this.skills.includes(this.tempSkill)) {
+                this.skills.push(this.tempSkill)
+              }
+              this.tempSkill = ''
+          }
+      }
   }
-}
+};
 </script>
 
 <style>
@@ -68,7 +71,8 @@ label {
   letter-spacing: 1px;
   font-weight: bold;
 }
-input, select {
+input,
+select {
   display: block;
   padding: 10px 6px;
   width: 100%;
