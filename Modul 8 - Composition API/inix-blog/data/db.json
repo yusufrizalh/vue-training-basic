@@ -1,0 +1,22 @@
+{
+  "posts": [
+    {
+      "title": "Welcome to the Blog",
+      "body": "augue lacus viverra vitae congue eu consequat ac felis donec et odio pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim sodales ut eu sem integer vitae justo eget",
+      "id": 1,
+      "tags": ["webdev", "coding", "news"]
+    },
+    {
+      "title": "Top 5 CSS Tricks",
+      "body": "faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum curabitur vitae nunc sed velit dignissim sodales ut eu sem integer vitae justo eget magna fermentum iaculis eu non diam phasellus vestibulum lorem sed risus ultricies tristique nulla aliquet enim tortor at auctor urna nunc",
+      "id": 2,
+      "tags": ["webdev", "coding", "css"]
+    },
+    {
+      "title": "HTML CSS JS Basics",
+      "body": "cras pulvinar mattis nunc sed blandit libero volutpat sed cras ornare arcu dui vivamus arcu felis bibendum ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim sit amet venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut",
+      "id": 3,
+      "tags": ["webdev", "coding", "html"]
+    }
+  ]
+}
